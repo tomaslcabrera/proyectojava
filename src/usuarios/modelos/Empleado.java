@@ -52,6 +52,8 @@ public class Empleado {
     public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+   
+    public void mostrar(){
+        System.out.println(this);
+    }
 }

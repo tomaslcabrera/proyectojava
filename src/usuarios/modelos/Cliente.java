@@ -53,5 +53,7 @@ public class Cliente {
         this.clave = clave;
     }
     
-    
+    public void mostrar(){
+        System.out.println(this);
+    }
 }

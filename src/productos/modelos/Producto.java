@@ -14,7 +14,7 @@ public class Producto {
     private String categoria;
     private String estado;
     private float precio;
-
+    
     public Producto(int codigo, String descripcion, String categoria, String estado, float precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -22,7 +22,7 @@ public class Producto {
         this.estado = estado;
         this.precio = precio;
     }
-
+    
     public int verCodigo() {
         return codigo;
     }
@@ -63,7 +63,12 @@ public class Producto {
         this.precio = precio;
     }
     
-    public void mostrar(Producto unProducto){
-        System.out.println(unProducto);
+    public void mostrar(){
+        System.out.println(this);
+    }
+    
+    @Override
+    public String toString(){
+        return codigo + "\n" + descripcion + "\n" + categoria + "\n" + estado + "\n" + precio;
     }
 }

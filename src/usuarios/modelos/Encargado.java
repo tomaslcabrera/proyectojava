@@ -53,5 +53,7 @@ public class Encargado {
         this.nombre = nombre;
     }
     
-    
+    public void mostrar(){
+        System.out.println(this);
+    }
 }
