@@ -57,6 +57,7 @@ public class Empleado {
     }
    
     public void mostrar(){
-        System.out.println(this);
+        System.out.println("Empleado: " + this.apellido + ", " + this.nombre);
+        System.out.println("Correo: " + this.correo);
     }
 }

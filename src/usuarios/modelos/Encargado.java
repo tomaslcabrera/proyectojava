@@ -56,6 +56,7 @@ public class Encargado {
     }
     
     public void mostrar(){
-        System.out.println(this);
+        System.out.println("Encargado: " + this.apellido + ", " + this.nombre);
+        System.out.println("Correo: " + this.correo);
     }
 }

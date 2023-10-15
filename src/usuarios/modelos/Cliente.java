@@ -4,7 +4,8 @@
  */
 package usuarios.modelos;
 
-import pedidos.modelos.Pedidos;
+import java.util.ArrayList;
+import pedidos.modelos.Pedido;
 
 /**
  *
@@ -15,17 +16,18 @@ public class Cliente {
     private String apellido;
     private String correo;
     private String clave;
-    private Pedidos unPedido;
+    private ArrayList<Pedido> pedidos;
     
     public Cliente(){}
-    
-    public Cliente(String nombre, String apellido, String correo, String clave) {
+
+    public Cliente(String correo, String clave, String apellido, String nombre) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.clave = clave;
+//        this.unPedido = unPedido;
     }
-
+    
     public String verNombre() {
         return nombre;
     }
@@ -59,6 +61,7 @@ public class Cliente {
     }
     
     public void mostrar(){
-        System.out.println(this);
+        System.out.println("Cliente: " + this.apellido + " " + this.nombre);
+        System.out.println("Correo: " + this.correo);
     }
 }

@@ -67,7 +67,9 @@ public class Producto {
     }
     
     public void mostrar(){
-        System.out.println(this);
+        System.out.println("Producto: " + this.descripcion);
+        System.out.println("Precio: " + this.precio);
+        System.out.println("Categoria: " + this.categoria + " Vigente: " + this.estado);
     }
     
     @Override

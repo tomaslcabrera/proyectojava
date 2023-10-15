@@ -8,13 +8,14 @@ package pedidos.modelos;
  *
  * @author tomyl
  */
-public enum Estado {
+public enum Estados {
     CREADO,SOLICITADO,PROCESANDO,ENTREGADO;
     
+    @Override
     public String toString(){
         switch (this) {
             case CREADO -> {
-                return "Creado";
+                return "CREADO";
             }
             case SOLICITADO -> {
                 return "SOLICITADO";
