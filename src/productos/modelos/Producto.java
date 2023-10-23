@@ -72,6 +72,10 @@ public class Producto {
         System.out.println("Categoria: " + this.categoria + " Vigente: " + this.estado);
     }
     
+    public boolean equals(Producto prod){
+        return (this.codigo == prod.codigo);
+    }
+    
     @Override
     public String toString(){
         return codigo + "\n" + descripcion + "\n" + categoria + "\n" + estado + "\n" + precio;

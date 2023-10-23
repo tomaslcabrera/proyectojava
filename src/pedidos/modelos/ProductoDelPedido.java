@@ -38,6 +38,8 @@ public class ProductoDelPedido {
         this.producto = producto;
     }
     
-    
+    public boolean equal(ProductoDelPedido pdp){
+        return (this.producto.equals(pdp.producto));
+    }
     
 }

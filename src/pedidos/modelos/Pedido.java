@@ -23,7 +23,7 @@ public class Pedido {
     
     public Pedido(){}
 
-    public Pedido(int numero, LocalDateTime fechaYHora, Cliente cliente, Estados estado, ArrayList<ProductoDelPedido> productosDelPedido) {
+    public Pedido(int numero, LocalDateTime fechaYHora, Estados estado, ArrayList<ProductoDelPedido> productosDelPedido, Cliente cliente) {
         this.numero = numero;
         this.fechaYHora = fechaYHora;
         this.cliente = cliente;
@@ -74,5 +74,9 @@ public class Pedido {
         for (ProductoDelPedido productoDelPedido : productosDelPedido) {
             System.out.println("\t"+productoDelPedido.verProducto().verDescripcion()+"\t"+ productoDelPedido.verCantidad());
         }
+    }
+    
+    public boolean equals(Pedido ped){
+        return (this.numero == ped.numero);
     }
 }

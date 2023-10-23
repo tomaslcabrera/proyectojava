@@ -9,14 +9,14 @@ package productos.modelos;
  * @author tomyl
  */
 public enum Categoria {
-    ENTRADA,PLATO_PRINCIPAL,POSTRE;
+    ENTRADA,PLATOPRINCIPAL,POSTRE;
     
     public String toString(){
         switch (this) {
             case ENTRADA -> {
                 return "Entrada";
             }
-            case PLATO_PRINCIPAL -> {
+            case PLATOPRINCIPAL -> {
                 return "Plato Principal";
             }
             case POSTRE -> {
