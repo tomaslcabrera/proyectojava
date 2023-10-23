@@ -16,6 +16,7 @@ import productos.modelos.Categoria;
 import productos.modelos.Estado;
 import pedidos.modelos.Estados;
 import pedidos.modelos.ProductoDelPedido;
+import usuarios.modelos.Usuario;
 
 /**
  *
@@ -28,7 +29,7 @@ public class ControladorPrincipal {
         */
         ArrayList<Producto> listaProductos = new ArrayList<>();
         ArrayList<Pedido> listaPedidos = new ArrayList<>();
-        ArrayList<Cliente> listaClientes = new ArrayList<>();
+        ArrayList<Usuario> listaClientes = new ArrayList<>();
         
         
         System.out.println("#################### ");
@@ -64,15 +65,15 @@ public class ControladorPrincipal {
         
         System.out.println("#################### ");
         System.out.println("CLIENTES");
-        Cliente cliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
-        Cliente cliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "ApellidoCliente2", "NombreCliente2");       
-        Cliente cliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "ApellidoCliente3", "NombreCliente3");
+        Usuario cliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
+        Usuario cliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "ApellidoCliente2", "NombreCliente2");       
+        Usuario cliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "ApellidoCliente3", "NombreCliente3");
         
         listaClientes.add(cliente1);
         listaClientes.add(cliente2);
         listaClientes.add(cliente3);
         
-        for (Cliente e: listaClientes)
+        for (Usuario e: listaClientes)
             e.mostrar();
         
         
@@ -86,7 +87,7 @@ public class ControladorPrincipal {
             listapdp1.add(pdp1);
         if (!listapdp1.contains(pdp2))
             listapdp1.add(pdp2);
-        Pedido unPedido1 = new Pedido(1, LocalDateTime.now(),Estados.PROCESANDO, listapdp1, cliente1);        
+        Pedido unPedido1 = new Pedido(1, LocalDateTime.now(),Estados.PROCESANDO, listapdp1, (Cliente) cliente1);        
         
         ArrayList<ProductoDelPedido> productosDelPedido2 = new ArrayList<>();
         ProductoDelPedido pdp3 = new ProductoDelPedido(listaProductos.get(2), 10);
@@ -109,7 +110,7 @@ public class ControladorPrincipal {
         }
         
         
-        Pedido unPedido2 = new Pedido(2, LocalDateTime.now(),Estados.CREADO, productosDelPedido2, cliente2);        
+        Pedido unPedido2 = new Pedido(2, LocalDateTime.now(),Estados.CREADO, productosDelPedido2, (Cliente) cliente2);        
         
         ArrayList<ProductoDelPedido> productosDelPedido3 = new ArrayList<>();
         ProductoDelPedido pdp6 = new ProductoDelPedido(listaProductos.get(1), 100);
@@ -118,7 +119,7 @@ public class ControladorPrincipal {
             productosDelPedido3.add(pdp6);
         if (!productosDelPedido3.contains(pdp7))
             productosDelPedido3.add(pdp7);
-        Pedido unPedido3 = new Pedido(2, LocalDateTime.now(),Estados.SOLICITADO, productosDelPedido3, cliente3);        
+        Pedido unPedido3 = new Pedido(2, LocalDateTime.now(),Estados.SOLICITADO, productosDelPedido3, (Cliente) cliente3);        
         //pedido repetido
 
         if(!listaPedidos.contains(unPedido1))
@@ -146,6 +147,122 @@ public class ControladorPrincipal {
     
     /*
      FIN Primera parte - comparación de objetos
+    */
+    
+    /*
+    INICIO Segunda parte - herencia
+//    */
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
+        Usuario unCliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
+        Usuario unCliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "ApellidoCliente2", "NombreCliente2");       
+        Usuario unCliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "ApellidoCliente3", "NombreCliente3");
+        Usuario unCliente4 = new Cliente("cliente3@bar.com", "claveCliente4", "ApellidoCliente4", "NombreCliente4"); 
+        //unCliente4 repetido con unCliente3
+        
+        if (!usuarios.contains(unCliente1))
+            usuarios.add(unCliente1);
+        if (!usuarios.contains(unCliente2))
+            usuarios.add(unCliente2);
+        if (!usuarios.contains(unCliente3))
+            usuarios.add(unCliente3);
+        if (!usuarios.contains(unCliente4))
+            usuarios.add(unCliente4);
+              
+                
+        Usuario unEmpleado1 = new Empleado("empleado1@bar.com", "claveEmpleado1", "ApellidoEmpleado1", "NombreEmpleado1");        
+        Usuario unEmpleado2 = new Empleado("empleado2@bar.com", "claveEmpleado2", "ApellidoEmpleado2", "NombreEmpleado2");        
+        Usuario unEmpleado3 = new Empleado("empleado3@bar.com", "claveEmpleado3", "ApellidoEmpleado3", "NombreEmpleado3");
+        Usuario unEmpleado4 = new Empleado("empleado3@bar.com", "claveEmpleado4", "ApellidoEmpleado4", "NombreEmpleado4");
+        //empleado repetido
+        
+        
+        if (!usuarios.contains(unEmpleado1))
+            usuarios.add(unEmpleado1);
+        if (!usuarios.contains(unEmpleado2))
+            usuarios.add(unEmpleado2);
+        if (!usuarios.contains(unEmpleado3))
+            usuarios.add(unEmpleado3);
+        if (!usuarios.contains(unEmpleado4))
+            usuarios.add(unEmpleado4);
+     
+
+        Usuario unEncargado1 = new Encargado("encargado1@bar.com", "claveEncargado1", "ApellidoEncargado1", "NombreEncargado1");
+        Usuario unEncargado2 = new Encargado("encargado2@bar.com", "claveEncargado2", "ApellidoEncargado2", "NombreEncargado2");
+        Usuario unEncargado3 = new Encargado("encargado3@bar.com", "claveEncargado3", "ApellidoEncargado3", "NombreEncargado3");
+        Usuario unEncargado4 = new Encargado("encargado3@bar.com", "claveEncargado4", "ApellidoEncargado4", "NombreEncargado4");
+        //encargado repetido
+
+        if(!usuarios.contains(unEncargado1))
+            usuarios.add(unEncargado1);
+        if(!usuarios.contains(unEncargado2))
+            usuarios.add(unEncargado2);
+        if(!usuarios.contains(unEncargado3))
+            usuarios.add(unEncargado3);
+        if(!usuarios.contains(unEncargado4))
+            usuarios.add(unEncargado4);
+        
+         
+        
+        Usuario unEncargado5 = new Encargado("cliente1@bar.com", "claveEncargado4", "ApellidoEncargado4", "NombreEncargado4");
+        if(!usuarios.contains(unEncargado5))
+            usuarios.add(unEncargado5);
+        //mismo correo que un cliente, no debe agregarse
+        
+        Usuario unCliente5 = new Encargado("empleado3@bar.com", "claveEncargado4", "ApellidoEncargado4", "NombreEncargado4");
+        if(!usuarios.contains(unCliente5))
+            usuarios.add(unCliente5);
+        //mismo correo que un empleado, no debe agregarse
+        
+        for (var i = 0; i < usuarios.size(); i++) {
+        for (var j = 0; j < usuarios.size(); j++) {
+            if (usuarios.get(i).equals(usuarios.get(j))  && i != j) {
+                usuarios.remove(usuarios.get(j));
+             }
+         }
+        }
+        
+        System.out.println("Clientes");
+        System.out.println("========");
+        for(Usuario c : usuarios) {
+            if (c instanceof Cliente) {
+                c.mostrar();
+                System.out.println();
+            }
+        }
+        System.out.println();  
+        
+        System.out.println("Empleados");
+        System.out.println("=========");
+        for(Usuario e : usuarios) {
+            if (e instanceof Empleado) {
+                e.mostrar();
+                System.out.println();
+            }
+        }
+        System.out.println();
+        
+        System.out.println("Encargados");
+        System.out.println("==========");
+        for(Usuario e : usuarios) {
+            if (e instanceof Encargado) {
+                e.mostrar();
+                System.out.println();
+            }
+        }
+        System.out.println();  
+        
+        System.out.println("Todos");
+        System.out.println("=====");
+        for(Usuario u : usuarios) {
+            u.mostrar();
+            System.out.println();
+        }
+        System.out.println();
+    
+    
+    /*
+    FIN Segunda parte - herencia
     */
     }
 }
